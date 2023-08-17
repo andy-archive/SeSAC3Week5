@@ -33,6 +33,8 @@
 		38F4AB8B2A8DAB880040D798 /* LottoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8A2A8DAB880040D798 /* LottoManager.swift */; };
 		38F4AB8D2A8DB1C70040D798 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8C2A8DB1C70040D798 /* ReusableViewProtocol.swift */; };
 		38F4AB8F2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */; };
+		38F4AB942A8DC9810040D798 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB932A8DC9810040D798 /* WeatherManager.swift */; };
+		38F4AB972A8DC9D30040D798 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 38F4AB962A8DC9D30040D798 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,7 @@
 		38F4AB8A2A8DAB880040D798 /* LottoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoManager.swift; sourceTree = "<group>"; };
 		38F4AB8C2A8DB1C70040D798 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributeProtocol.swift; sourceTree = "<group>"; };
+		38F4AB932A8DC9810040D798 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F4AB972A8DC9D30040D798 /* SwiftyJSON in Frameworks */,
 				38F4AB602A8CB0B80040D798 /* Kingfisher in Frameworks */,
 				38F4AB5D2A8CB0B20040D798 /* Alamofire in Frameworks */,
 			);
@@ -97,15 +101,16 @@
 		041AE3CB2A899B28007724AE /* SeSAC3Week5 */ = {
 			isa = PBXGroup;
 			children = (
-				38F4AB892A8DAB7A0040D798 /* Lotto */,
 				041AE3DA2A899B29007724AE /* Info.plist */,
 				041AE3D52A899B29007724AE /* Assets.xcassets */,
 				38F4AB5A2A8CB0960040D798 /* Application */,
 				38F4AB672A8CB2580040D798 /* Data */,
 				38F4AB862A8DA3860040D798 /* Extension */,
+				38F4AB892A8DAB7A0040D798 /* Lotto */,
 				041AE3E02A899B9F007724AE /* Network */,
 				38F4AB592A8CB07C0040D798 /* Storyboard */,
 				38F4AB612A8CB0C70040D798 /* View */,
+				38F4AB902A8DC92B0040D798 /* Weather */,
 			);
 			path = SeSAC3Week5;
 			sourceTree = "<group>";
@@ -181,6 +186,14 @@
 			path = Lotto;
 			sourceTree = "<group>";
 		};
+		38F4AB902A8DC92B0040D798 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				38F4AB932A8DC9810040D798 /* WeatherManager.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +213,7 @@
 			packageProductDependencies = (
 				38F4AB5C2A8CB0B20040D798 /* Alamofire */,
 				38F4AB5F2A8CB0B80040D798 /* Kingfisher */,
+				38F4AB962A8DC9D30040D798 /* SwiftyJSON */,
 			);
 			productName = SeSAC3Week5;
 			productReference = 041AE3C92A899B28007724AE /* SeSAC3Week5.app */;
@@ -232,6 +246,7 @@
 			packageReferences = (
 				38F4AB5B2A8CB0B20040D798 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				38F4AB5E2A8CB0B80040D798 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				38F4AB952A8DC9D30040D798 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 041AE3CA2A899B28007724AE /* Products */;
 			projectDirPath = "";
@@ -265,6 +280,7 @@
 			files = (
 				38F4AB6B2A8CB2740040D798 /* Result.swift in Sources */,
 				38F4AB882A8DA3910040D798 /* Alert+Extension.swift in Sources */,
+				38F4AB942A8DC9810040D798 /* WeatherManager.swift in Sources */,
 				041AE3D12A899B28007724AE /* ViewController.swift in Sources */,
 				041AE3CD2A899B28007724AE /* AppDelegate.swift in Sources */,
 				041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */,
@@ -524,6 +540,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		38F4AB952A8DC9D30040D798 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -536,6 +560,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 38F4AB5E2A8CB0B80040D798 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		38F4AB962A8DC9D30040D798 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38F4AB952A8DC9D30040D798 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -19,15 +19,28 @@ class CodableViewController: UIViewController {
     
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     
     var resultText = "Apple"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        WeatherManager.shared.callRequestString { temp, humid in
+            self.tempLabel.text = temp
+            self.humidityLabel.text = humid
+        }
+        
+        WeatherManager.shared.callRequestStringJSON { json in
+            let temp = json["main"]["temp"].doubleValue - 273.15
+            let humidity = json["main"]["humidity"].intValue
+            
+            self.tempLabel.text = "\(temp)"
+            self.humidityLabel.text = "\(humidity)"
+        }
 //        fetchTranslateData(source: "ko", target: "en", text: "안녕하세요")
 //        fetchLottoData()
-        
     }
     
     @IBAction func checkButtonClicked(_ sender: UIButton) {
