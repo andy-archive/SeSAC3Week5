@@ -29,8 +29,10 @@
 		38F4AB7B2A8CB3490040D798 /* PosterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F4AB792A8CB3490040D798 /* PosterCollectionViewCell.xib */; };
 		38F4AB842A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB822A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift */; };
 		38F4AB852A8CB7890040D798 /* HeaderPosterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F4AB832A8CB7890040D798 /* HeaderPosterCollectionReusableView.xib */; };
-		38F4AB882A8DA3910040D798 /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB872A8DA3910040D798 /* Alert+.swift */; };
+		38F4AB882A8DA3910040D798 /* Alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB872A8DA3910040D798 /* Alert+Extension.swift */; };
 		38F4AB8B2A8DAB880040D798 /* LottoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8A2A8DAB880040D798 /* LottoManager.swift */; };
+		38F4AB8D2A8DB1C70040D798 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8C2A8DB1C70040D798 /* ReusableViewProtocol.swift */; };
+		38F4AB8F2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +58,10 @@
 		38F4AB792A8CB3490040D798 /* PosterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterCollectionViewCell.xib; sourceTree = "<group>"; };
 		38F4AB822A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPosterCollectionReusableView.swift; sourceTree = "<group>"; };
 		38F4AB832A8CB7890040D798 /* HeaderPosterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderPosterCollectionReusableView.xib; sourceTree = "<group>"; };
-		38F4AB872A8DA3910040D798 /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
+		38F4AB872A8DA3910040D798 /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
 		38F4AB8A2A8DAB880040D798 /* LottoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoManager.swift; sourceTree = "<group>"; };
+		38F4AB8C2A8DB1C70040D798 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +166,9 @@
 		38F4AB862A8DA3860040D798 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				38F4AB872A8DA3910040D798 /* Alert+.swift */,
+				38F4AB872A8DA3910040D798 /* Alert+Extension.swift */,
+				38F4AB8C2A8DB1C70040D798 /* ReusableViewProtocol.swift */,
+				38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -258,12 +264,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F4AB6B2A8CB2740040D798 /* Result.swift in Sources */,
-				38F4AB882A8DA3910040D798 /* Alert+.swift in Sources */,
+				38F4AB882A8DA3910040D798 /* Alert+Extension.swift in Sources */,
 				041AE3D12A899B28007724AE /* ViewController.swift in Sources */,
 				041AE3CD2A899B28007724AE /* AppDelegate.swift in Sources */,
 				041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */,
 				38F4AB7A2A8CB3490040D798 /* PosterCollectionViewCell.swift in Sources */,
 				041AE3E42A899D2C007724AE /* APIKey.swift in Sources */,
+				38F4AB8F2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift in Sources */,
 				38F4AB712A8CB3130040D798 /* PosterViewController.swift in Sources */,
 				38F4AB662A8CB2540040D798 /* Lotto.swift in Sources */,
 				38F4AB692A8CB26C0040D798 /* Message.swift in Sources */,
@@ -272,6 +279,7 @@
 				041AE3CF2A899B28007724AE /* SceneDelegate.swift in Sources */,
 				38F4AB842A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift in Sources */,
 				041AE3E72A899D84007724AE /* Endpoint.swift in Sources */,
+				38F4AB8D2A8DB1C70040D798 /* ReusableViewProtocol.swift in Sources */,
 				38F4AB6D2A8CB27C0040D798 /* Translation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

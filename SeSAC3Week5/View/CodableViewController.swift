@@ -35,7 +35,7 @@ class CodableViewController: UIViewController {
         guard let text = dateTextField.text else { return }
         
         do {
-            let result = try validateUserInputError(text: text)
+            let _ = try validateUserInputError(text: text)
         } catch {
             print("VALIDATION ERROR")
         }
@@ -106,7 +106,7 @@ class CodableViewController: UIViewController {
         let format = DateFormatter()
         format.dateFormat = "yyyyMMdd"
         
-        guard let result = format.date(from: text) else { return false }
+        guard let _ = format.date(from: text) else { return false }
         
         return true
     }

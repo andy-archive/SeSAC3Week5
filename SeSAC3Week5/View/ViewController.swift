@@ -66,3 +66,14 @@ class ViewController: UIViewController {
      
 }
 
+//extension ViewController: CollectionViewAttributeProtocol {
+//    
+//    func configureCollectionView() {
+//        <#code#>
+//    }
+//    
+//    func configureCollectionViewLayout() {
+//        <#code#>
+//    }
+//    
+//}
