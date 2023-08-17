@@ -30,6 +30,7 @@
 		38F4AB842A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB822A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift */; };
 		38F4AB852A8CB7890040D798 /* HeaderPosterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F4AB832A8CB7890040D798 /* HeaderPosterCollectionReusableView.xib */; };
 		38F4AB882A8DA3910040D798 /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB872A8DA3910040D798 /* Alert+.swift */; };
+		38F4AB8B2A8DAB880040D798 /* LottoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8A2A8DAB880040D798 /* LottoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		38F4AB822A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPosterCollectionReusableView.swift; sourceTree = "<group>"; };
 		38F4AB832A8CB7890040D798 /* HeaderPosterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderPosterCollectionReusableView.xib; sourceTree = "<group>"; };
 		38F4AB872A8DA3910040D798 /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
+		38F4AB8A2A8DAB880040D798 /* LottoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +93,12 @@
 		041AE3CB2A899B28007724AE /* SeSAC3Week5 */ = {
 			isa = PBXGroup;
 			children = (
-				38F4AB862A8DA3860040D798 /* Extension */,
+				38F4AB892A8DAB7A0040D798 /* Lotto */,
 				041AE3DA2A899B29007724AE /* Info.plist */,
 				041AE3D52A899B29007724AE /* Assets.xcassets */,
 				38F4AB5A2A8CB0960040D798 /* Application */,
 				38F4AB672A8CB2580040D798 /* Data */,
+				38F4AB862A8DA3860040D798 /* Extension */,
 				041AE3E02A899B9F007724AE /* Network */,
 				38F4AB592A8CB07C0040D798 /* Storyboard */,
 				38F4AB612A8CB0C70040D798 /* View */,
@@ -162,6 +165,14 @@
 				38F4AB872A8DA3910040D798 /* Alert+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		38F4AB892A8DAB7A0040D798 /* Lotto */ = {
+			isa = PBXGroup;
+			children = (
+				38F4AB8A2A8DAB880040D798 /* LottoManager.swift */,
+			);
+			path = Lotto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				38F4AB712A8CB3130040D798 /* PosterViewController.swift in Sources */,
 				38F4AB662A8CB2540040D798 /* Lotto.swift in Sources */,
 				38F4AB692A8CB26C0040D798 /* Message.swift in Sources */,
+				38F4AB8B2A8DAB880040D798 /* LottoManager.swift in Sources */,
 				38F4AB6F2A8CB3000040D798 /* CodableViewController.swift in Sources */,
 				041AE3CF2A899B28007724AE /* SceneDelegate.swift in Sources */,
 				38F4AB842A8CB7890040D798 /* HeaderPosterCollectionReusableView.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PosterViewController: UIViewController {
 
@@ -13,6 +14,10 @@ class PosterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LottoManger.shared.callLotto { bonus, number in
+            print("VALUES FROM CLOSURE: \(bonus), \(number)")
+        }
         
         posterCollectionView.delegate = self
         posterCollectionView.dataSource = self
