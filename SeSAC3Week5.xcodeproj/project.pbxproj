@@ -35,6 +35,7 @@
 		38F4AB8F2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */; };
 		38F4AB942A8DC9810040D798 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB932A8DC9810040D798 /* WeatherManager.swift */; };
 		38F4AB972A8DC9D30040D798 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 38F4AB962A8DC9D30040D798 /* SwiftyJSON */; };
+		38F4AB992A8DE2E80040D798 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB982A8DE2E80040D798 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		38F4AB8C2A8DB1C70040D798 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributeProtocol.swift; sourceTree = "<group>"; };
 		38F4AB932A8DC9810040D798 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		38F4AB982A8DE2E80040D798 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				38F4AB932A8DC9810040D798 /* WeatherManager.swift */,
+				38F4AB982A8DE2E80040D798 /* Weather.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				38F4AB882A8DA3910040D798 /* Alert+Extension.swift in Sources */,
 				38F4AB942A8DC9810040D798 /* WeatherManager.swift in Sources */,
 				041AE3D12A899B28007724AE /* ViewController.swift in Sources */,
+				38F4AB992A8DE2E80040D798 /* Weather.swift in Sources */,
 				041AE3CD2A899B28007724AE /* AppDelegate.swift in Sources */,
 				041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */,
 				38F4AB7A2A8CB3490040D798 /* PosterCollectionViewCell.swift in Sources */,

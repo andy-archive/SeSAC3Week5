@@ -13,22 +13,39 @@ class WeatherManager {
     
     static let shared = WeatherManager()
     
-    func callRequestStringJSON(completionHandler: @escaping (JSON) -> Void) {
+    func callRequestCodable(success: @escaping (WeatherData) -> Void, failure: @escaping () -> Void) {
         
         let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(APIKey.latitude)&lon=\(APIKey.longitude)&appid=\(APIKey.weatherKey)"
         
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                completionHandler(json)
-                
-            case .failure(let error):
-                print(error)
+        AF.request(url, method: .get).validate(statusCode: 200...500)
+            .responseDecodable(of: WeatherData.self) { response in
+                switch response.result {
+                case .success(let value):
+                    success(value)
+                case .failure(let error):
+                    print(error)
+                    failure()
+                }
             }
-        }
+    }
+    
+    func callRequestSJSON(completionHandler: @escaping (JSON) -> Void) {
+        
+        let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(APIKey.latitude)&lon=\(APIKey.longitude)&appid=\(APIKey.weatherKey)"
+        
+        AF.request(url, method: .get).validate(statusCode: 200...500)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("JSON: \(json)")
+                    
+                    completionHandler(json)
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
     
     func callRequestString(completionHandler: @escaping (String, String) -> Void) {

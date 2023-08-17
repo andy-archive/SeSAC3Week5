@@ -27,20 +27,26 @@ class CodableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        WeatherManager.shared.callRequestCodable { data in
+            self.tempLabel.text = "\(data.main.temp)"
+        } failure: {
+            print("Show Alert")
+        }
+        
         WeatherManager.shared.callRequestString { temp, humid in
             self.tempLabel.text = temp
             self.humidityLabel.text = humid
         }
         
-        WeatherManager.shared.callRequestStringJSON { json in
+        WeatherManager.shared.callRequestSJSON { json in
             let temp = json["main"]["temp"].doubleValue - 273.15
             let humidity = json["main"]["humidity"].intValue
             
             self.tempLabel.text = "\(temp)"
             self.humidityLabel.text = "\(humidity)"
         }
-//        fetchTranslateData(source: "ko", target: "en", text: "안녕하세요")
-//        fetchLottoData()
+        //        fetchTranslateData(source: "ko", target: "en", text: "안녕하세요")
+        //        fetchLottoData()
     }
     
     @IBAction func checkButtonClicked(_ sender: UIButton) {
@@ -53,19 +59,19 @@ class CodableViewController: UIViewController {
             print("VALIDATION ERROR")
         }
         
-//        } catch ValidationError.emptyString {
-//            print(ValidationError.emptyString)
-//        } catch ValidationError.isNotInt {
-//            print(ValidationError.isNotInt)
-//        } catch ValidationError.isNotDate {
-//            print(ValidationError.isNotDate)
-//        }
+        //        } catch ValidationError.emptyString {
+        //            print(ValidationError.emptyString)
+        //        } catch ValidationError.isNotInt {
+        //            print(ValidationError.isNotInt)
+        //        } catch ValidationError.isNotDate {
+        //            print(ValidationError.isNotDate)
+        //        }
         
-//        if validateUserInput(text: text) {
-//            print("IT IS ABLE TO SEARCH AND DO NETWORK REQUEST")
-//        } else {
-//            print("NOT ABLE TO SEARCH")
-//        }
+        //        if validateUserInput(text: text) {
+        //            print("IT IS ABLE TO SEARCH AND DO NETWORK REQUEST")
+        //        } else {
+        //            print("NOT ABLE TO SEARCH")
+        //        }
         
     }
     
