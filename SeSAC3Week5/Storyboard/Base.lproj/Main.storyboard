@@ -2,9 +2,11 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,6 +99,52 @@
             </objects>
             <point key="canvasLocation" x="131" y="-27"/>
         </scene>
+        <!--Poster View Controller-->
+        <scene sceneID="fTm-S6-f4G">
+            <objects>
+                <viewController storyboardIdentifier="PosterViewController" id="QHE-cP-KOn" customClass="PosterViewController" customModule="SeSAC3Week5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e7d-Cg-dNK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ERI-Tt-JdR">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Zx-MS-6oP">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oJt-3Q-4OP">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MeT-0Q-S52">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XFg-WO-jee"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ERI-Tt-JdR" firstAttribute="leading" secondItem="XFg-WO-jee" secondAttribute="leading" id="AgP-9D-F4W"/>
+                            <constraint firstItem="XFg-WO-jee" firstAttribute="trailing" secondItem="ERI-Tt-JdR" secondAttribute="trailing" id="ZTU-Fs-drA"/>
+                            <constraint firstItem="ERI-Tt-JdR" firstAttribute="top" secondItem="XFg-WO-jee" secondAttribute="top" id="xgv-iu-kqa"/>
+                            <constraint firstItem="XFg-WO-jee" firstAttribute="bottom" secondItem="ERI-Tt-JdR" secondAttribute="bottom" id="z8r-d2-nnJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="posterCollectionView" destination="ERI-Tt-JdR" id="lgz-Bu-SZ2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KhA-85-DhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="621"/>
+        </scene>
         <!--Basic View Controller-->
         <scene sceneID="79a-ML-9tP">
             <objects>
@@ -110,7 +158,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIN-ep-p7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="-30"/>
+            <point key="canvasLocation" x="921" y="-27"/>
+        </scene>
+        <!--Codable View Controller-->
+        <scene sceneID="oRg-3n-cGM">
+            <objects>
+                <viewController storyboardIdentifier="CodableViewController" id="oeW-Pt-xuA" customClass="CodableViewController" customModule="SeSAC3Week5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="277-AX-6j5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Md-2E-IPj">
+                                <rect key="frame" x="20" y="79" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ae5-76-7YM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7e-LL-0bq">
+                                <rect key="frame" x="20" y="149" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6m9-sO-l01"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OTv-G8-DJN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="k7e-LL-0bq" firstAttribute="top" secondItem="9Md-2E-IPj" secondAttribute="bottom" constant="20" id="0OP-wS-gWN"/>
+                            <constraint firstItem="k7e-LL-0bq" firstAttribute="leading" secondItem="OTv-G8-DJN" secondAttribute="leading" constant="20" id="9hU-IF-FgN"/>
+                            <constraint firstItem="OTv-G8-DJN" firstAttribute="trailing" secondItem="k7e-LL-0bq" secondAttribute="trailing" constant="20" id="AKd-S8-cQd"/>
+                            <constraint firstItem="OTv-G8-DJN" firstAttribute="trailing" secondItem="9Md-2E-IPj" secondAttribute="trailing" constant="20" id="Qmk-wu-Qt9"/>
+                            <constraint firstItem="9Md-2E-IPj" firstAttribute="leading" secondItem="OTv-G8-DJN" secondAttribute="leading" constant="20" id="jRw-7u-B11"/>
+                            <constraint firstItem="9Md-2E-IPj" firstAttribute="top" secondItem="OTv-G8-DJN" secondAttribute="top" constant="20" id="v1z-OR-upn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="checkButton" destination="k7e-LL-0bq" id="0MY-OB-GrR"/>
+                        <outlet property="dateTextField" destination="9Md-2E-IPj" id="fsB-Bp-Tfh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czv-qF-uUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1697" y="-27"/>
         </scene>
     </scenes>
     <resources>
