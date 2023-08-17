@@ -29,6 +29,16 @@ class PosterViewController: UIViewController {
         posterCollectionView.collectionViewLayout = layout
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        showAlert(title: "Test ALERT", message: "DO YOU WANT TO CHANGE?", button: "CHANGE") {
+            print("DID CLICK CHANGE BUTTON") // 실행 순서 (2)
+            self.posterCollectionView.backgroundColor = .lightGray
+        }
+        print("AFTER showAlert") // 실행 순서 (1)
+    }
+    
 }
 
 extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
