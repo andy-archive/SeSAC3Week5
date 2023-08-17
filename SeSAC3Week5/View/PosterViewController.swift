@@ -7,10 +7,17 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import Kingfisher
 
 class PosterViewController: UIViewController {
 
     @IBOutlet weak var posterCollectionView: UICollectionView!
+    
+    var list: Recommendation = Recommendation(totalResults: 0, totalPages: 0, results: [], page: 0)
+    var secondList: Recommendation = Recommendation(totalResults: 0, totalPages: 0, results: [], page: 0)
+    var thirdList: Recommendation = Recommendation(totalResults: 0, totalPages: 0, results: [], page: 0)
+    var fourthList: Recommendation = Recommendation(totalResults: 0, totalPages: 0, results: [], page: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +28,23 @@ class PosterViewController: UIViewController {
         
         configureCollectionView()
         configureCollectionViewLayout()
+        
+        callRecommendation(movieId: 671) { data in
+            self.list = data
+            
+            self.callRecommendation(movieId: 27205) { data in
+                self.secondList = data
+                
+                self.callRecommendation(movieId: 569094) { data in
+                    self.thirdList = data
+                    
+                    self.callRecommendation(movieId: 843) { data in
+                        self.fourthList = data
+                        self.posterCollectionView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,20 +57,60 @@ class PosterViewController: UIViewController {
 //        print("AFTER showAlert") // 실행 순서 (1)
     }
     
+    // 해리포터: 671 & 인셉션: 27205 & 스파이더맨 어크로스: 569094 & 화양연화 843
+    func callRecommendation(movieId: Int, completionHandler: @escaping (Recommendation) -> Void) {
+        
+        let url = "https://api.themoviedb.org/3/movie/\(movieId)/recommendations?api_key=\(Key.tmdbKey)&language=ko-KR"
+        
+        AF.request(url).validate(statusCode: 200...500)
+            .responseDecodable(of: Recommendation.self) { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(value)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
 }
 
 extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 8
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return list.results.count
+        } else if section == 1 {
+            return secondList.results.count
+        } else if section == 2 {
+            return thirdList.results.count
+        } else if section == 3 {
+            return fourthList.results.count
+        } else {
+            return 9
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterCollectionViewCell.identifier, for: indexPath) as? PosterCollectionViewCell else { return UICollectionViewCell() }
+        
+        if indexPath.section == 0 {
+            let url = "https://www.themoviedb.org/t/p/w220_and_h330_face\(list.results[indexPath.item].posterPath ?? "" )"
+            cell.posterImageView.kf.setImage(with: URL(string: url))
+        } else if indexPath.section == 1 {
+            let url = "https://www.themoviedb.org/t/p/w220_and_h330_face\(secondList.results[indexPath.item].posterPath ?? "" )"
+            cell.posterImageView.kf.setImage(with: URL(string: url))
+        } else if indexPath.section == 2 {
+            let url = "https://www.themoviedb.org/t/p/w220_and_h330_face\(thirdList.results[indexPath.item].posterPath ?? "" )"
+            cell.posterImageView.kf.setImage(with: URL(string: url))
+        } else if indexPath.section == 3 {
+            let url = "https://www.themoviedb.org/t/p/w220_and_h330_face\(fourthList.results[indexPath.item].posterPath ?? "" )"
+            cell.posterImageView.kf.setImage(with: URL(string: url))
+        }
         
         cell.posterImageView.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
         
@@ -57,7 +121,7 @@ extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if kind == UICollectionView.elementKindSectionHeader {
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderPosterCollectionReusableView.identifier, for: indexPath) as? HeaderPosterCollectionReusableView else { return UICollectionReusableView() }
             
-            view.headerLabel.text = "Test Section"
+            view.headerLabel.text = "Test Section \(indexPath.section)"
             
             return view
         } else {
@@ -86,6 +150,8 @@ extension PosterViewController: CollectionViewAttributeProtocol {
         posterCollectionView.collectionViewLayout = layout
     }
 }
+
+// =====================================
 
 protocol Test {
     func test()

@@ -13,6 +13,13 @@ class PosterCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        posterImageView.contentMode = .scaleAspectFill
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        posterImageView.image = nil // 재사용이 되는 걸 방지
     }
 
 }

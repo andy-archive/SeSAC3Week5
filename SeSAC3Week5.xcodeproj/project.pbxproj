@@ -36,6 +36,7 @@
 		38F4AB942A8DC9810040D798 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB932A8DC9810040D798 /* WeatherManager.swift */; };
 		38F4AB972A8DC9D30040D798 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 38F4AB962A8DC9D30040D798 /* SwiftyJSON */; };
 		38F4AB992A8DE2E80040D798 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB982A8DE2E80040D798 /* Weather.swift */; };
+		38F4AB9B2A8DEC780040D798 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB9A2A8DEC780040D798 /* Recommendation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributeProtocol.swift; sourceTree = "<group>"; };
 		38F4AB932A8DC9810040D798 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		38F4AB982A8DE2E80040D798 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		38F4AB9A2A8DEC780040D798 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				38F4AB652A8CB2540040D798 /* Lotto.swift */,
+				38F4AB9A2A8DEC780040D798 /* Recommendation.swift */,
 				38F4AB682A8CB26C0040D798 /* Message.swift */,
 				38F4AB6A2A8CB2740040D798 /* Result.swift */,
 				38F4AB6C2A8CB27C0040D798 /* Translation.swift */,
@@ -293,6 +296,7 @@
 				38F4AB8F2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift in Sources */,
 				38F4AB712A8CB3130040D798 /* PosterViewController.swift in Sources */,
 				38F4AB662A8CB2540040D798 /* Lotto.swift in Sources */,
+				38F4AB9B2A8DEC780040D798 /* Recommendation.swift in Sources */,
 				38F4AB692A8CB26C0040D798 /* Message.swift in Sources */,
 				38F4AB8B2A8DAB880040D798 /* LottoManager.swift in Sources */,
 				38F4AB6F2A8CB3000040D798 /* CodableViewController.swift in Sources */,
