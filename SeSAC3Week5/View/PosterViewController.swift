@@ -52,10 +52,30 @@ class PosterViewController: UIViewController {
         }
         
         group.notify(queue: .main) {
-            print("====END====")
+//            print("====END====")
             self.posterCollectionView.reloadData()
         }
     }
+    
+    @IBAction func sendNotification(_ sender: UIButton) {
+        
+        // Foreground에서 알림이 뜨지 않는게 디폴트 => 애플의 정책
+        
+        //1. 컨텐츠 2. 언제 => Send Notification
+        let content = UNMutableNotificationContent()
+        content.title = "다마고치에게 물을 주세요!"
+        content.body = "아직 레벨 3이에요. 물을 주세요!"
+        content.badge = 100
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1200, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            print(error)
+        }
+    }
+    
     
     func dispatchGroupEnterLeave() {
         let group = DispatchGroup()
