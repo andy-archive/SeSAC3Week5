@@ -29,6 +29,14 @@ class PosterViewController: UIViewController {
         configureCollectionView()
         configureCollectionViewLayout()
         
+        for item in UIFont.familyNames {
+            print(item)
+            
+            for name in UIFont.fontNames(forFamilyName: item) {
+                print("=======\(name)")
+            }
+        }
+        
         callRecommendation(movieId: 671) { data in
             self.list = data
             
@@ -122,6 +130,7 @@ extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSo
             guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderPosterCollectionReusableView.identifier, for: indexPath) as? HeaderPosterCollectionReusableView else { return UICollectionReusableView() }
             
             view.headerLabel.text = "Test Section \(indexPath.section)"
+            view.headerLabel.font = UIFont(name: "GmarketSansBold", size: 20)
             
             return view
         } else {

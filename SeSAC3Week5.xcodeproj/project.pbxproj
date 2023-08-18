@@ -17,6 +17,9 @@
 		041AE3E42A899D2C007724AE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AE3E32A899D2C007724AE /* APIKey.swift */; };
 		041AE3E72A899D84007724AE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AE3E62A899D84007724AE /* Endpoint.swift */; };
 		041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AE3E82A89A265007724AE /* GCDBasicViewController.swift */; };
+		38C6C3AA2A8EF05400E298FD /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 38C6C3A72A8EF05400E298FD /* GmarketSansBold.otf */; };
+		38C6C3AB2A8EF05400E298FD /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 38C6C3A82A8EF05400E298FD /* GmarketSansLight.otf */; };
+		38C6C3AC2A8EF05400E298FD /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 38C6C3A92A8EF05400E298FD /* GmarketSansMedium.otf */; };
 		38F4AB5D2A8CB0B20040D798 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 38F4AB5C2A8CB0B20040D798 /* Alamofire */; };
 		38F4AB602A8CB0B80040D798 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 38F4AB5F2A8CB0B80040D798 /* Kingfisher */; };
 		38F4AB662A8CB2540040D798 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F4AB652A8CB2540040D798 /* Lotto.swift */; };
@@ -52,6 +55,9 @@
 		041AE3E32A899D2C007724AE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		041AE3E62A899D84007724AE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		041AE3E82A89A265007724AE /* GCDBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBasicViewController.swift; sourceTree = "<group>"; };
+		38C6C3A72A8EF05400E298FD /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		38C6C3A82A8EF05400E298FD /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
+		38C6C3A92A8EF05400E298FD /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
 		38F4AB652A8CB2540040D798 /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
 		38F4AB682A8CB26C0040D798 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		38F4AB6A2A8CB2740040D798 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				38F4AB5A2A8CB0960040D798 /* Application */,
 				38F4AB672A8CB2580040D798 /* Data */,
 				38F4AB862A8DA3860040D798 /* Extension */,
+				38C6C3A62A8EEFF700E298FD /* Fonts */,
 				38F4AB892A8DAB7A0040D798 /* Lotto */,
 				041AE3E02A899B9F007724AE /* Network */,
 				38F4AB592A8CB07C0040D798 /* Storyboard */,
@@ -127,6 +134,16 @@
 				041AE3E82A89A265007724AE /* GCDBasicViewController.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		38C6C3A62A8EEFF700E298FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				38C6C3A72A8EF05400E298FD /* GmarketSansBold.otf */,
+				38C6C3A82A8EF05400E298FD /* GmarketSansLight.otf */,
+				38C6C3A92A8EF05400E298FD /* GmarketSansMedium.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		38F4AB592A8CB07C0040D798 /* Storyboard */ = {
@@ -271,8 +288,11 @@
 				041AE3E22A899D1C007724AE /* .gitignore in Resources */,
 				38F4AB852A8CB7890040D798 /* HeaderPosterCollectionReusableView.xib in Resources */,
 				041AE3D92A899B29007724AE /* LaunchScreen.storyboard in Resources */,
+				38C6C3AB2A8EF05400E298FD /* GmarketSansLight.otf in Resources */,
 				38F4AB7B2A8CB3490040D798 /* PosterCollectionViewCell.xib in Resources */,
 				041AE3D62A899B29007724AE /* Assets.xcassets in Resources */,
+				38C6C3AC2A8EF05400E298FD /* GmarketSansMedium.otf in Resources */,
+				38C6C3AA2A8EF05400E298FD /* GmarketSansBold.otf in Resources */,
 				041AE3D42A899B28007724AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
