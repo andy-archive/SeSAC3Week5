@@ -36,6 +36,25 @@ class PosterViewController: UIViewController {
         
         configureCollectionView()
         configureCollectionViewLayout()
+        
+        let movieId = [673, 674, 675, 676]
+        
+        let group = DispatchGroup()
+        
+        for item in movieId {
+            group.enter()
+            callRecommendation(movieId: item) { data in
+                if item == 673 {
+                    self.list = data
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            print("====END====")
+            self.posterCollectionView.reloadData()
+        }
     }
     
     func dispatchGroupEnterLeave() {
