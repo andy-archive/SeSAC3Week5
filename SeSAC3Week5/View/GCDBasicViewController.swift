@@ -12,13 +12,48 @@ class GCDBasicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        globalAsyncTwo()
+        dispatchGroup()
+//        globalAsyncTwo()
+    }
+    
+    func dispatchGroup() {
+        
+        let group = DispatchGroup()
+        
+        DispatchQueue.global().async(group: group) {
+            for i in 1...100 {
+                print(i, terminator: " ")
+            }
+        }
+
+        DispatchQueue.global().async(group: group) {
+            for i in 101...200 {
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group) {
+            for i in 201...300 {
+                print(i, terminator: " ")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group) {
+            for i in 301...400 {
+                print(i, terminator: " ")
+            }
+        }
+        
+        group.notify(queue: .main) {
+            // 비동기가 무엇이 끝날지는 모르지만, 모든 비동기가 끝나고 아래 코드를 실행하기
+            print("END") // 프로그램 갱신과 같은 코드가 들어갈 것
+        }
     }
     
     func globalAsyncTwo() {
         print("Start")
         
-        for i in 1...100 {
+        for i in 1...100 { // 멀티스레드로 1...100을 출력 -> 마지막에 어떻게 끝날지 모른다
             DispatchQueue.global().async {
                 sleep(1)
                 print(i, terminator: " ")

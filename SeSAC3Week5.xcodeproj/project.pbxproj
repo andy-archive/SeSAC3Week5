@@ -131,7 +131,6 @@
 			children = (
 				041AE3E32A899D2C007724AE /* APIKey.swift */,
 				041AE3E62A899D84007724AE /* Endpoint.swift */,
-				041AE3E82A89A265007724AE /* GCDBasicViewController.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -169,6 +168,7 @@
 			children = (
 				041AE3D02A899B28007724AE /* ViewController.swift */,
 				38F4AB6E2A8CB3000040D798 /* CodableViewController.swift */,
+				041AE3E82A89A265007724AE /* GCDBasicViewController.swift */,
 				38F4AB702A8CB3130040D798 /* PosterViewController.swift */,
 				38F4AB782A8CB3490040D798 /* PosterCollectionViewCell.swift */,
 				38F4AB792A8CB3490040D798 /* PosterCollectionViewCell.xib */,
