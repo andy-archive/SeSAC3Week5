@@ -22,36 +22,94 @@ class PosterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        LottoManger.shared.callLotto { bonus, number in
-//            print("VALUES FROM CLOSURE: \(bonus), \(number)")
-//        }
+        //        LottoManger.shared.callLotto { bonus, number in
+        //            print("VALUES FROM CLOSURE: \(bonus), \(number)")
+        //        }
+        
+        //        for item in UIFont.familyNames {
+        //            print(item)
+        //
+        //            for name in UIFont.fontNames(forFamilyName: item) {
+        //                print("=======\(name)")
+        //            }
+        //        }
         
         configureCollectionView()
         configureCollectionViewLayout()
+    }
+    
+    func dispatchGroupEnterLeave() {
+        let group = DispatchGroup()
         
-        for item in UIFont.familyNames {
-            print(item)
-            
-            for name in UIFont.fontNames(forFamilyName: item) {
-                print("=======\(name)")
+        group.enter() // + 1
+        callRecommendation(movieId: 671) { data in
+            self.list = data
+            print("====1====")
+            group.leave() // - 1
+        }
+ 
+        group.enter() // + 1
+        callRecommendation(movieId: 27205) { data in
+            self.secondList = data
+            print("====2====")
+            group.leave() // - 1
+        }
+        
+        group.enter() // + 1
+        callRecommendation(movieId: 569094) { data in
+            self.thirdList = data
+            print("====3====")
+            group.leave() // - 1
+        }
+        
+        group.enter() // + 1
+        callRecommendation(movieId: 843) { data in
+            self.fourthList = data
+            print("====4====")
+            group.leave() // - 1
+        }
+        
+        group.notify(queue: .main) {
+            print("====END====")
+            self.posterCollectionView.reloadData()
+        }
+    }
+    
+    func dispatchGroupNotify() {
+
+        let group = DispatchGroup()
+        
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(movieId: 671) { data in
+                self.list = data
+                print("====1====")
             }
         }
         
-        callRecommendation(movieId: 671) { data in
-            self.list = data
-            
+        DispatchQueue.global().async(group: group) {
             self.callRecommendation(movieId: 27205) { data in
                 self.secondList = data
-                
-                self.callRecommendation(movieId: 569094) { data in
-                    self.thirdList = data
-                    
-                    self.callRecommendation(movieId: 843) { data in
-                        self.fourthList = data
-                        self.posterCollectionView.reloadData()
-                    }
-                }
+                print("====2====")
             }
+        }
+        
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(movieId: 569094) { data in
+                self.thirdList = data
+                print("====3====")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(movieId: 843) { data in
+                self.fourthList = data
+                print("====4====")
+            }
+        }
+        
+        group.notify(queue: .main) {
+            print("END")
+            self.posterCollectionView.reloadData()
         }
     }
     
