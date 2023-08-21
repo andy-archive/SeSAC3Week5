@@ -67,7 +67,15 @@ class PosterViewController: UIViewController {
         content.body = "아직 레벨 3이에요. 물을 주세요!"
         content.badge = 100
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1200, repeats: false)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1200, repeats: false) // 특정 시간 단위로 알림 보내기
+        
+        var component = DateComponents()
+        component.minute = 5 // 5분마다
+        component.hour = 10 // 10시마다
+//        component.month = 2 // 2월마다
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false) // 정해진 시각(날짜/시간/분)에 알림 보내기
+        
         
         let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
         

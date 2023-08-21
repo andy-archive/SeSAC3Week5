@@ -41,8 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
+    // Foreground에서 올리고 싶을 때 => willPresent
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        // 특정 화면이나 특정 조건에서만 Foreground 알림 받기
+        // 특정 화면에서는 알림을 받지 않기
         completionHandler([.sound, .badge, .banner, .list])
     }
     
+    // 특정 푸시를 클릭하면 특정 화면으로 이동
+    // 알림 개수를 제한 (64개로 제한 - UNNotificationRequest의 identifier)
+    // 카톡 - foreground로 앱을 켜는 순간, 등록된 알림을 모두 제거
+    // 잔디 - foreground로 앱을 켜도 나머지 알림이 모두 살아 있음
 }
