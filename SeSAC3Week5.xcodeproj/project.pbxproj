@@ -114,8 +114,8 @@
 				041AE3DA2A899B29007724AE /* Info.plist */,
 				041AE3D52A899B29007724AE /* Assets.xcassets */,
 				38F4AB5A2A8CB0960040D798 /* Application */,
-				38F4AB672A8CB2580040D798 /* Data */,
-				38F4AB862A8DA3860040D798 /* Extension */,
+				38F4AB672A8CB2580040D798 /* Model */,
+				38F4AB862A8DA3860040D798 /* Extensions */,
 				38C6C3A62A8EEFF700E298FD /* Fonts */,
 				38F4AB892A8DAB7A0040D798 /* Lotto */,
 				041AE3E02A899B9F007724AE /* Network */,
@@ -178,7 +178,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		38F4AB672A8CB2580040D798 /* Data */ = {
+		38F4AB672A8CB2580040D798 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				38F4AB652A8CB2540040D798 /* Lotto.swift */,
@@ -187,17 +187,17 @@
 				38F4AB6A2A8CB2740040D798 /* Result.swift */,
 				38F4AB6C2A8CB27C0040D798 /* Translation.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		38F4AB862A8DA3860040D798 /* Extension */ = {
+		38F4AB862A8DA3860040D798 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				38F4AB872A8DA3910040D798 /* Alert+Extension.swift */,
 				38F4AB8C2A8DB1C70040D798 /* ReusableViewProtocol.swift */,
 				38F4AB8E2A8DB9340040D798 /* CollectionViewAttributeProtocol.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		38F4AB892A8DAB7A0040D798 /* Lotto */ = {

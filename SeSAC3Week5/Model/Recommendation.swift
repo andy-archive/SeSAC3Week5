@@ -22,17 +22,13 @@ struct Recommendation: Codable {
 
 // MARK: - Movie
 struct Movie: Codable {
-    let adult: Bool
-    let overview, releaseDate: String
+    let adult, video: Bool
+    let originalTitle, originalLanguage: String
+    let overview, releaseDate, title: String
+    let posterPath, backdropPath: String? // 없는 경우가 존재
     let popularity: Double
-    let voteCount: Int
-    let title: String
-    let posterPath, backdropPath: String?
     let voteAverage: Double
-    let originalTitle: String
-    let id: Int
-    let originalLanguage: String
-    let video: Bool
+    let id, voteCount: Int
     let mediaType: MediaType
     let genreIDS: [Int]
 
@@ -57,3 +53,9 @@ struct Movie: Codable {
 enum MediaType: String, Codable {
     case movie = "movie"
 }
+
+// Quicktype이 잘못 묶은 경우
+//enum OriginalLanguage: String, Codable {
+//    case ko = "ko"
+//    case en = "en"
+//}
